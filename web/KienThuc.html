@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kiến thức | FishingHub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #f9fafb; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-3">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center">
+          <a href="Home.html" class="font-['Pacifico'] text-primary text-2xl">logo</a>
+        </div>
+        <nav class="hidden md:flex space-x-6">
+          <a href="Home.html" class="text-gray-800 hover:text-primary font-medium">Trang chủ</a>
+          <a href="Product.html" class="text-gray-800 hover:text-primary font-medium">Sản phẩm</a>
+          <a href="SuKien.html" class="text-gray-800 hover:text-primary font-medium">Sự kiện</a>
+          <a href="CongDong.html" class="text-gray-800 hover:text-primary font-medium">Cộng đồng</a>
+          <a href="KienThuc.html" class="text-primary font-medium">Kiến thức</a>
+        </nav>
+        <!-- Search and User Actions -->
+        <div class="flex items-center space-x-4">
+          <!-- Search -->
+          <div class="relative">
+            <input
+              type="text"
+              placeholder="Tìm kiếm..."
+              class="pl-10 pr-4 py-2 w-64 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+            />
+            <div
+              class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none w-6 h-full"
+            >
+              <i class="ri-search-line text-gray-400"></i>
+            </div>
+          </div>
+          <!-- Cart -->
+          <div class="relative w-10 h-10 flex items-center justify-center">
+            <button class="text-gray-700 hover:text-primary">
+              <i class="ri-shopping-cart-2-line text-xl"></i>
+            </button>
+            <span
+              class="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full"
+              >3</span
+            >
+          </div>
+          <!-- Notifications -->
+          <div class="relative w-10 h-10 flex items-center justify-center">
+            <button class="text-gray-700 hover:text-primary">
+              <i class="ri-notification-3-line text-xl"></i>
+            </button>
+            <span
+              class="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full"
+              >5</span
+            >
+          </div>
+          <!-- User Profile -->
+          <div class="relative">
+            <button
+              class="flex items-center space-x-2 focus:outline-none"
+              id="userMenuButton"
+            >
+              <div class="w-10 h-10 rounded-full bg-gray-200 overflow-hidden">
+                <img
+                  src="https://readdy.ai/api/search-image?query=profile%2520picture%2520of%2520a%2520vietnamese%2520man%2C%2520friendly%2520face%2C%2520natural%2520lighting%2C%2520professional%2520look%2C%2520high%2520quality%2C%2520photorealistic&width=100&height=100&seq=12346&orientation=squarish"
+                  alt="User"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <span class="hidden md:block text-gray-700"
+                >Nguyễn Văn Hải</span
+              >
+              <i class="ri-arrow-down-s-line text-gray-700"></i>
+            </button>
+            <!-- User Dropdown Menu -->
+            <div
+              class="absolute right-0 mt-2 w-48 bg-white rounded shadow-lg py-2 hidden"
+              id="userMenu"
+            >
+              <a
+                href="#"
+                class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+              >
+                <i class="ri-user-line mr-2"></i>Hồ sơ cá nhân
+              </a>
+              <a
+                href="#"
+                class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+              >
+                <i class="ri-settings-3-line mr-2"></i>Cài đặt
+              </a>
+              <a
+                href="#"
+                class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+              >
+                <i class="ri-trophy-line mr-2"></i>Thành tựu
+              </a>
+              <div class="border-t border-gray-100 my-1"></div>
+              <a
+                href="#"
+                class="block px-4 py-2 text-red-600 hover:bg-gray-100"
+              >
+                <i class="ri-logout-box-line mr-2"></i>Đăng xuất
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-12">
+    <h1 class="text-3xl font-bold mb-8 text-primary">Kiến thức loài cá</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Fish Card 1 -->
+      <div class="bg-white rounded-lg shadow-sm overflow-hidden transition duration-300 hover:shadow-md">
+        <div class="h-40 overflow-hidden">
+          <img src="https://readdy.ai/api/search-image?query=carp%2520fish%2C%2520detailed%2520view%2C%2520in%2520water%2C%2520natural%2520habitat%2C%2520clear%2520view%2520of%2520features%2C%2520high%2520quality%2C%2520photorealistic&width=500&height=300&seq=12361&orientation=landscape" alt="Cá chép" class="w-full h-full object-cover object-top" />
+        </div>
+        <div class="p-4">
+          <h3 class="text-lg font-bold mb-2">Cá chép</h3>
+          <p class="text-gray-600 text-sm mb-3">Loài cá phổ biến tại các hồ nước ngọt Việt Nam, có tập tính ăn mồi đa dạng.</p>
+          <div class="flex flex-wrap gap-2 mb-3">
+            <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded">Nước ngọt</span>
+            <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">Dễ câu</span>
+            <span class="bg-yellow-100 text-yellow-700 text-xs px-2 py-1 rounded">Phổ biến</span>
+          </div>
+          <a href="#" class="text-primary hover:underline text-sm flex items-center">Xem chi tiết<i class="ri-arrow-right-s-line ml-1"></i></a>
+        </div>
+      </div>
+      <!-- Fish Card 2 -->
+      <div class="bg-white rounded-lg shadow-sm overflow-hidden transition duration-300 hover:shadow-md">
+        <div class="h-40 overflow-hidden">
+          <img src="https://readdy.ai/api/search-image?query=snakehead%2520fish%2C%2520detailed%2520view%2C%2520in%2520water%2C%2520natural%2520habitat%2C%2520clear%2520view%2520of%2520features%2C%2520high%2520quality%2C%2520photorealistic&width=500&height=300&seq=12362&orientation=landscape" alt="Cá lóc" class="w-full h-full object-cover object-top" />
+        </div>
+        <div class="p-4">
+          <h3 class="text-lg font-bold mb-2">Cá lóc</h3>
+          <p class="text-gray-600 text-sm mb-3">Loài cá hung dữ, thường sống ở vùng nước đồng bằng, đầm lầy miền Nam.</p>
+          <div class="flex flex-wrap gap-2 mb-3">
+            <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded">Nước ngọt</span>
+            <span class="bg-red-100 text-red-700 text-xs px-2 py-1 rounded">Khó câu</span>
+            <span class="bg-purple-100 text-purple-700 text-xs px-2 py-1 rounded">Săn mồi</span>
+          </div>
+          <a href="#" class="text-primary hover:underline text-sm flex items-center">Xem chi tiết<i class="ri-arrow-right-s-line ml-1"></i></a>
+        </div>
+      </div>
+      <!-- Fish Card 3 -->
+      <div class="bg-white rounded-lg shadow-sm overflow-hidden transition duration-300 hover:shadow-md">
+        <div class="h-40 overflow-hidden">
+          <img src="https://readdy.ai/api/search-image?query=tilapia%2520fish%2C%2520detailed%2520view%2C%2520in%2520water%2C%2520natural%2520habitat%2C%2520clear%2520view%2520of%2520features%2C%2520high%2520quality%2C%2520photorealistic&width=500&height=300&seq=12363&orientation=landscape" alt="Cá rô phi" class="w-full h-full object-cover object-top" />
+        </div>
+        <div class="p-4">
+          <h3 class="text-lg font-bold mb-2">Cá rô phi</h3>
+          <p class="text-gray-600 text-sm mb-3">Loài cá dễ nuôi, sinh sản nhanh, thích hợp cho người mới tập câu.</p>
+          <div class="flex flex-wrap gap-2 mb-3">
+            <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded">Nước ngọt</span>
+            <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">Dễ câu</span>
+            <span class="bg-yellow-100 text-yellow-700 text-xs px-2 py-1 rounded">Phổ biến</span>
+          </div>
+          <a href="#" class="text-primary hover:underline text-sm flex items-center">Xem chi tiết<i class="ri-arrow-right-s-line ml-1"></i></a>
+        </div>
+      </div>
+      <!-- Fish Card 4 -->
+      <div class="bg-white rounded-lg shadow-sm overflow-hidden transition duration-300 hover:shadow-md">
+        <div class="h-40 overflow-hidden">
+          <img src="https://readdy.ai/api/search-image?query=giant%2520mekong%2520catfish%2C%2520detailed%2520view%2C%2520in%2520water%2C%2520natural%2520habitat%2C%2520clear%2520view%2520of%2520features%2C%2520high%2520quality%2C%2520photorealistic&width=500&height=300&seq=12364&orientation=landscape" alt="Cá tra" class="w-full h-full object-cover object-top" />
+        </div>
+        <div class="p-4">
+          <h3 class="text-lg font-bold mb-2">Cá tra</h3>
+          <p class="text-gray-600 text-sm mb-3">Loài cá đặc trưng vùng sông Mekong, có thể đạt kích thước lớn.</p>
+          <div class="flex flex-wrap gap-2 mb-3">
+            <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded">Nước ngọt</span>
+            <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded">Trung bình</span>
+            <span class="bg-indigo-100 text-indigo-700 text-xs px-2 py-1 rounded">Đặc trưng</span>
+          </div>
+          <a href="#" class="text-primary hover:underline text-sm flex items-center">Xem chi tiết<i class="ri-arrow-right-s-line ml-1"></i></a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white pt-12 pb-6">
+    <!-- ... Copy phần footer và chat box từ Home.html ... -->
+  </footer>
+</body>
+</html> 

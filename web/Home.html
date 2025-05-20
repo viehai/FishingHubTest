@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cộng Đồng Câu Cá</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1E88E5",
+              secondary: "#64B5F6",
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fafb;
+      }
+      .hero-section {
+      background-image: url('https://readdy.ai/api/search-image?query=fishing%2520scene%2520with%2520beautiful%2520lake%2520view%2C%2520sunrise%2C%2520calm%2520water%2C%2520fishing%2520equipment%2C%2520natural%2520landscape%2C%2520soft%2520morning%2520light%2C%2520mist%2520over%2520water%2C%2520high%2520quality%2C%2520photorealistic%2C%2520serene%2520atmosphere%2C%2520vibrant%2520colors&width=1600&height=800&seq=12345&orientation=landscape');
+      background-size: cover;
+      background-position: center;
+      }
+      .event-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+      .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+      }
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+      }
+      .custom-checkbox {
+      position: relative;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      transition: all 0.2s;
+      }
+      .custom-checkbox.checked {
+      background-color: #1E88E5;
+      border-color: #1E88E5;
+      }
+      .custom-checkbox.checked::after {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: 2px;
+      width: 6px;
+      height: 12px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      }
+      .custom-switch {
+      position: relative;
+      display: inline-block;
+      width: 48px;
+      height: 24px;
+      }
+      .custom-switch-input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+      }
+      .custom-switch-slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 24px;
+      }
+      .custom-switch-slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+      }
+      .custom-switch-input:checked + .custom-switch-slider {
+      background-color: #1E88E5;
+      }
+      .custom-switch-input:checked + .custom-switch-slider:before {
+      transform: translateX(24px);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+      <div class="container mx-auto px-4 py-3">
+        <div class="flex items-center justify-between">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <a href="#" class="font-['Pacifico'] text-primary text-2xl">logo</a>
+          </div>
+          <!-- Navigation -->
+          <nav class="hidden md:flex space-x-6">
+            <a
+              href="/"
+              id="homeLink"
+              class="text-gray-800 hover:text-primary font-medium"
+              >Trang chủ</a
+            >
+            <a
+              href="https://readdy.ai/home/1c36b6a4-e9d4-42e2-8a83-74dcaeb16e53/eeb27cad-73da-42ed-b6ef-993eca2ad6bc"
+              data-readdy="true"
+              class="text-gray-800 hover:text-primary font-medium"
+              >Sản phẩm</a
+            >
+            <a href="#" class="text-gray-800 hover:text-primary font-medium"
+              >Sự kiện</a
+            >
+            <a href="#" class="text-gray-800 hover:text-primary font-medium"
+              >Cộng đồng</a
+            >
+            <a href="#" class="text-gray-800 hover:text-primary font-medium"
+              >Kiến thức</a
+            >
+          </nav>
+          <!-- Search and User Actions -->
+          <div class="flex items-center space-x-4">
+            <!-- Search -->
+            <div class="relative">
+              <input
+                type="text"
+                placeholder="Tìm kiếm..."
+                class="pl-10 pr-4 py-2 w-64 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+              />
+              <div
+                class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none w-6 h-full"
+              >
+                <i class="ri-search-line text-gray-400"></i>
+              </div>
+            </div>
+            <!-- Cart -->
+            <div class="relative w-10 h-10 flex items-center justify-center">
+              <button class="text-gray-700 hover:text-primary">
+                <i class="ri-shopping-cart-2-line text-xl"></i>
+              </button>
+              <span
+                class="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full"
+                >3</span
+              >
+            </div>
+            <!-- Notifications -->
+            <div class="relative w-10 h-10 flex items-center justify-center">
+              <button class="text-gray-700 hover:text-primary">
+                <i class="ri-notification-3-line text-xl"></i>
+              </button>
+              <span
+                class="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full"
+                >5</span
+              >
+            </div>
+            <!-- User Profile -->
+            <div class="relative">
+              <button
+                class="flex items-center space-x-2 focus:outline-none"
+                id="userMenuButton"
+              >
+                <div class="w-10 h-10 rounded-full bg-gray-200 overflow-hidden">
+                  <img
+                    src="https://readdy.ai/api/search-image?query=profile%2520picture%2520of%2520a%2520vietnamese%2520man%2C%2520friendly%2520face%2C%2520natural%2520lighting%2C%2520professional%2520look%2C%2520high%2520quality%2C%2520photorealistic&width=100&height=100&seq=12346&orientation=squarish"
+                    alt="User"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <span class="hidden md:block text-gray-700"
+                  >Nguyễn Văn Hải</span
+                >
+                <i class="ri-arrow-down-s-line text-gray-700"></i>
+              </button>
+              <!-- User Dropdown Menu -->
+              <div
+                class="absolute right-0 mt-2 w-48 bg-white rounded shadow-lg py-2 hidden"
+                id="userMenu"
+              >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                >
+                  <i class="ri-user-line mr-2"></i>Hồ sơ cá nhân
+                </a>
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                >
+                  <i class="ri-settings-3-line mr-2"></i>Cài đặt
+                </a>
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                >
+                  <i class="ri-trophy-line mr-2"></i>Thành tựu
+                </a>
+                <div class="border-t border-gray-100 my-1"></div>
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-red-600 hover:bg-gray-100"
+                >
+                  <i class="ri-logout-box-line mr-2"></i>Đăng xuất
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero-section relative">
+      <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+      <div class="container mx-auto px-4 py-20 relative z-10">
+        <div class="max-w-2xl text-white">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">
+            Khám phá thế giới câu cá cùng cộng đồng
+          </h1>
+          <p class="text-xl mb-8">
+            Chia sẻ kinh nghiệm, tham gia sự kiện và tìm kiếm những sản phẩm
+            chất lượng cho niềm đam mê của bạn.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <button
+              class="bg-primary hover:bg-blue-600 text-white px-6 py-3 rounded-button font-medium transition duration-300 whitespace-nowrap"
+            >
+              <i class="ri-calendar-event-line mr-2"></i>Khám phá sự kiện
+            </button>
+            <button
+              class="bg-white hover:bg-gray-100 text-primary px-6 py-3 rounded-button font-medium transition duration-300 whitespace-nowrap"
+            >
+              <i class="ri-store-2-line mr-2"></i>Mua sắm ngay
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Featured Events Section -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center mb-8">
+          <h2 class="text-2xl font-bold text-gray-800">Sự kiện sắp diễn ra</h2>
+          <a href="#" class="text-primary hover:underline flex items-center">
+            Xem tất cả
+            <i class="ri-arrow-right-line ml-1"></i>
+          </a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Event Card 1 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden event-card transition duration-300"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=fishing%2520competition%2520event%2C%2520people%2520gathered%2520at%2520lakeside%2C%2520fishing%2520rods%2C%2520competitive%2520atmosphere%2C%2520sunny%2520day%2C%2520natural%2520setting%2C%2520high%2520quality%2C%2520photorealistic&width=600&height=400&seq=12347&orientation=landscape"
+                alt="Sự kiện câu cá"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <span
+                  class="bg-blue-100 text-primary text-xs font-medium px-3 py-1 rounded-full"
+                  >Đang mở đăng ký</span
+                >
+                <span class="ml-auto text-sm text-gray-500">25/05/2025</span>
+              </div>
+              <h3 class="text-xl font-bold mb-2">
+                Giải đấu câu cá Hồ Tây 2025
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Sự kiện câu cá thường niên lớn nhất miền Bắc với nhiều giải
+                thưởng hấp dẫn.
+              </p>
+              <div class="flex items-center text-sm text-gray-500 mb-4">
+                <div class="flex items-center mr-4">
+                  <i class="ri-map-pin-line mr-1"></i>
+                  <span>Hồ Tây, Hà Nội</span>
+                </div>
+                <div class="flex items-center">
+                  <i class="ri-user-line mr-1"></i>
+                  <span>142/200 người tham gia</span>
+                </div>
+              </div>
+              <button
+                class="w-full bg-primary hover:bg-blue-600 text-white py-2 rounded-button font-medium transition duration-300 whitespace-nowrap"
+              >
+                Đăng ký tham gia
+              </button>
+            </div>
+          </div>
+          <!-- Event Card 2 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden event-card transition duration-300"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=fishing%2520workshop%2C%2520instructor%2520teaching%2520fishing%2520techniques%2C%2520small%2520group%2520of%2520people%2C%2520learning%2520environment%2C%2520fishing%2520equipment%2520display%2C%2520high%2520quality%2C%2520photorealistic&width=600&height=400&seq=12348&orientation=landscape"
+                alt="Workshop câu cá"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <span
+                  class="bg-blue-100 text-primary text-xs font-medium px-3 py-1 rounded-full"
+                  >Đang mở đăng ký</span
+                >
+                <span class="ml-auto text-sm text-gray-500">02/06/2025</span>
+              </div>
+              <h3 class="text-xl font-bold mb-2">
+                Workshop kỹ thuật câu cá lure
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Học hỏi kỹ thuật câu cá lure từ chuyên gia Trần Đình Phong với
+                15 năm kinh nghiệm.
+              </p>
+              <div class="flex items-center text-sm text-gray-500 mb-4">
+                <div class="flex items-center mr-4">
+                  <i class="ri-map-pin-line mr-1"></i>
+                  <span>Hồ Trị An, Đồng Nai</span>
+                </div>
+                <div class="flex items-center">
+                  <i class="ri-user-line mr-1"></i>
+                  <span>28/50 người tham gia</span>
+                </div>
+              </div>
+              <button
+                class="w-full bg-primary hover:bg-blue-600 text-white py-2 rounded-button font-medium transition duration-300 whitespace-nowrap"
+              >
+                Đăng ký tham gia
+              </button>
+            </div>
+          </div>
+          <!-- Event Card 3 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden event-card transition duration-300"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=fishing%2520community%2520meetup%2C%2520people%2520socializing%2C%2520sharing%2520fishing%2520stories%2C%2520casual%2520atmosphere%2C%2520outdoor%2520setting%2C%2520fishing%2520gear%2520visible%2C%2520high%2520quality%2C%2520photorealistic&width=600&height=400&seq=12349&orientation=landscape"
+                alt="Offline meetup"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <span
+                  class="bg-blue-100 text-primary text-xs font-medium px-3 py-1 rounded-full"
+                  >Đang mở đăng ký</span
+                >
+                <span class="ml-auto text-sm text-gray-500">10/06/2025</span>
+              </div>
+              <h3 class="text-xl font-bold mb-2">
+                Offline meetup câu cá TP.HCM
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Gặp gỡ, giao lưu và chia sẻ kinh nghiệm cùng cộng đồng câu cá
+                tại TP.HCM.
+              </p>
+              <div class="flex items-center text-sm text-gray-500 mb-4">
+                <div class="flex items-center mr-4">
+                  <i class="ri-map-pin-line mr-1"></i>
+                  <span>Hồ Bàu Cá, TP.HCM</span>
+                </div>
+                <div class="flex items-center">
+                  <i class="ri-user-line mr-1"></i>
+                  <span>56/100 người tham gia</span>
+                </div>
+              </div>
+              <button
+                class="w-full bg-primary hover:bg-blue-600 text-white py-2 rounded-button font-medium transition duration-300 whitespace-nowrap"
+              >
+                Đăng ký tham gia
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Featured Products Section -->
+    <section class="py-12 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center mb-8">
+          <h2 class="text-2xl font-bold text-gray-800">Sản phẩm nổi bật</h2>
+          <a href="#" class="text-primary hover:underline flex items-center">
+            Xem tất cả
+            <i class="ri-arrow-right-line ml-1"></i>
+          </a>
+        </div>
+        <div
+          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6"
+        >
+          <!-- Product Card 1 -->
+          <div
+            class="bg-white rounded-lg shadow-sm overflow-hidden product-card transition duration-300"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=professional%2520fishing%2520rod%2C%2520high-end%2C%2520carbon%2520fiber%2C%2520detailed%2520reel%2C%2520clean%2520white%2520background%2C%2520product%2520photography%2C%2520high%2520quality%2C%2520photorealistic&width=400&height=400&seq=12350&orientation=squarish"
+                alt="Cần câu"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-medium mb-1 text-gray-800">
+                Cần câu Shimano Stradic FL
+              </h3>
+              <div class="flex items-center mb-2">
+                <div class="flex text-yellow-400">
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-half-fill"></i>
+                </div>
+                <span class="text-xs text-gray-500 ml-1">(126)</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-lg font-bold text-gray-800">2.850.000₫</span>
+                <button
+                  class="w-10 h-10 flex items-center justify-center bg-primary hover:bg-blue-600 text-white rounded-full transition duration-300"
+                >
+                  <i class="ri-shopping-cart-add-line"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Product Card 2 -->
+          <div
+            class="bg-white rounded-lg shadow-sm overflow-hidden product-card transition duration-300"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=fishing%2520reel%2C%2520high-end%2C%2520metal%2520construction%2C%2520precision%2520engineering%2C%2520clean%2520white%2520background%2C%2520product%2520photography%2C%2520high%2520quality%2C%2520photorealistic&width=400&height=400&seq=12351&orientation=squarish"
+                alt="Máy câu"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-medium mb-1 text-gray-800">
+                Máy câu Daiwa BG 4000
+              </h3>
+              <div class="flex items-center mb-2">
+                <div class="flex text-yellow-400">
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-line"></i>
+                </div>
+                <span class="text-xs text-gray-500 ml-1">(98)</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-lg font-bold text-gray-800">1.950.000₫</span>
+                <button
+                  class="w-10 h-10 flex items-center justify-center bg-primary hover:bg-blue-600 text-white rounded-full transition duration-300"
+                >
+                  <i class="ri-shopping-cart-add-line"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Product Card 3 -->
+          <div
+            class="bg-white rounded-lg shadow-sm overflow-hidden product-card transition duration-300"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=fishing%2520lures%2520set%2C%2520colorful%2520artificial%2520baits%2C%2520various%2520shapes%2520and%2520sizes%2C%2520clean%2520white%2520background%2C%2520product%2520photography%2C%2520high%2520quality%2C%2520photorealistic&width=400&height=400&seq=12352&orientation=squarish"
+                alt="Mồi câu"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-medium mb-1 text-gray-800">
+                Bộ mồi giả Rapala (10 cái)
+              </h3>
+              <div class="flex items-center mb-2">
+                <div class="flex text-yellow-400">
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                </div>
+                <span class="text-xs text-gray-500 ml-1">(215)</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-lg font-bold text-gray-800">750.000₫</span>
+                <button
+                  class="w-10 h-10 flex items-center justify-center bg-primary hover:bg-blue-600 text-white rounded-full transition duration-300"
+                >
+                  <i class="ri-shopping-cart-add-line"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Product Card 4 -->
+          <div
+            class="bg-white rounded-lg shadow-sm overflow-hidden product-card transition duration-300"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=fishing%2520tackle%2520box%2C%2520organized%2520compartments%2C%2520full%2520of%2520fishing%2520gear%2C%2520clean%2520white%2520background%2C%2520product%2520photography%2C%2520high%2520quality%2C%2520photorealistic&width=400&height=400&seq=12353&orientation=squarish"
+                alt="Hộp đựng"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-medium mb-1 text-gray-800">
+                Hộp đựng đồ câu Plano 3700
+              </h3>
+              <div class="flex items-center mb-2">
+                <div class="flex text-yellow-400">
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-half-fill"></i>
+                </div>
+                <span class="text-xs text-gray-500 ml-1">(76)</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-lg font-bold text-gray-800">450.000₫</span>
+                <button
+                  class="w-10 h-10 flex items-center justify-center bg-primary hover:bg-blue-600 text-white rounded-full transition duration-300"
+                >
+                  <i class="ri-shopping-cart-add-line"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Product Card 5 -->
+          <div
+            class="bg-white rounded-lg shadow-sm overflow-hidden product-card transition duration-300"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=fishing%2520line%2C%2520high%2520strength%2C%2520transparent%2520spool%2C%2520clean%2520white%2520background%2C%2520product%2520photography%2C%2520high%2520quality%2C%2520photorealistic&width=400&height=400&seq=12354&orientation=squarish"
+                alt="Dây câu"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-medium mb-1 text-gray-800">
+                Dây câu Power Pro 300m
+              </h3>
+              <div class="flex items-center mb-2">
+                <div class="flex text-yellow-400">
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-line"></i>
+                </div>
+                <span class="text-xs text-gray-500 ml-1">(124)</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-lg font-bold text-gray-800">380.000₫</span>
+                <button
+                  class="w-10 h-10 flex items-center justify-center bg-primary hover:bg-blue-600 text-white rounded-full transition duration-300"
+                >
+                  <i class="ri-shopping-cart-add-line"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Community Posts Section -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center mb-8">
+          <h2 class="text-2xl font-bold text-gray-800">Bài viết nổi bật</h2>
+          <a href="#" class="text-primary hover:underline flex items-center">
+            Xem tất cả
+            <i class="ri-arrow-right-line ml-1"></i>
+          </a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Post Card 1 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=person%2520holding%2520large%2520caught%2520fish%2C%2520proud%2520moment%2C%2520fishing%2520achievement%2C%2520natural%2520setting%2C%2520lake%2520or%2520river%2520background%2C%2520high%2520quality%2C%2520photorealistic&width=600&height=400&seq=12355&orientation=landscape"
+                alt="Bài viết"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <span
+                  class="bg-green-100 text-green-700 text-xs font-medium px-3 py-1 rounded-full"
+                  >Thành tựu</span
+                >
+                <span
+                  class="ml-2 bg-blue-100 text-primary text-xs font-medium px-3 py-1 rounded-full"
+                  >Cá chép</span
+                >
+              </div>
+              <h3 class="text-xl font-bold mb-2">
+                Kỷ lục cá chép 8.5kg tại Hồ Trị An
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Chia sẻ kinh nghiệm câu được cá chép khủng sau 3 giờ kiên trì
+                tại khu vực đầu hồ...
+              </p>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                  <div class="w-10 h-10 rounded-full overflow-hidden mr-3">
+                    <img
+                      src="https://readdy.ai/api/search-image?query=profile%2520picture%2520of%2520a%2520vietnamese%2520man%2C%2520outdoor%2520setting%2C%2520fishing%2520hat%2C%2520casual%2520look%2C%2520high%2520quality%2C%2520photorealistic&width=100&height=100&seq=12356&orientation=squarish"
+                      alt="User"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <p class="text-sm font-medium">Lê Thanh Tùng</p>
+                    <p class="text-xs text-gray-500">18/05/2025</p>
+                  </div>
+                </div>
+                <div class="flex items-center space-x-3">
+                  <div class="flex items-center text-gray-500">
+                    <i class="ri-heart-line mr-1"></i>
+                    <span class="text-sm">128</span>
+                  </div>
+                  <div class="flex items-center text-gray-500">
+                    <i class="ri-chat-1-line mr-1"></i>
+                    <span class="text-sm">36</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Post Card 2 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=fishing%2520technique%2520demonstration%2C%2520person%2520showing%2520proper%2520casting%2520form%2C%2520educational%2520content%2C%2520outdoor%2520setting%2C%2520high%2520quality%2C%2520photorealistic&width=600&height=400&seq=12357&orientation=landscape"
+                alt="Bài viết"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <span
+                  class="bg-yellow-100 text-yellow-700 text-xs font-medium px-3 py-1 rounded-full"
+                  >Kỹ thuật</span
+                >
+              </div>
+              <h3 class="text-xl font-bold mb-2">
+                5 kỹ thuật câu lure hiệu quả cho người mới
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Hướng dẫn chi tiết các kỹ thuật câu lure cơ bản giúp người mới
+                bắt đầu nhanh chóng thành thạo...
+              </p>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                  <div class="w-10 h-10 rounded-full overflow-hidden mr-3">
+                    <img
+                      src="https://readdy.ai/api/search-image?query=profile%2520picture%2520of%2520a%2520vietnamese%2520woman%2C%2520professional%2520look%2C%2520outdoor%2520setting%2C%2520high%2520quality%2C%2520photorealistic&width=100&height=100&seq=12358&orientation=squarish"
+                      alt="User"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <p class="text-sm font-medium">Nguyễn Thị Hương</p>
+                    <p class="text-xs text-gray-500">15/05/2025</p>
+                  </div>
+                </div>
+                <div class="flex items-center space-x-3">
+                  <div class="flex items-center text-gray-500">
+                    <i class="ri-heart-line mr-1"></i>
+                    <span class="text-sm">246</span>
+                  </div>
+                  <div class="flex items-center text-gray-500">
+                    <i class="ri-chat-1-line mr-1"></i>
+                    <span class="text-sm">52</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Post Card 3 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=fishing%2520equipment%2520review%2C%2520various%2520fishing%2520rods%2520and%2520reels%2520displayed%2C%2520comparison%2520setup%2C%2520detailed%2520view%2C%2520high%2520quality%2C%2520photorealistic&width=600&height=400&seq=12359&orientation=landscape"
+                alt="Bài viết"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <span
+                  class="bg-purple-100 text-purple-700 text-xs font-medium px-3 py-1 rounded-full"
+                  >Đánh giá</span
+                >
+              </div>
+              <h3 class="text-xl font-bold mb-2">
+                So sánh 5 cần câu phổ biến dưới 2 triệu đồng
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Phân tích chi tiết ưu nhược điểm của 5 mẫu cần câu phổ biến
+                trong tầm giá dưới 2 triệu đồng...
+              </p>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                  <div class="w-10 h-10 rounded-full overflow-hidden mr-3">
+                    <img
+                      src="https://readdy.ai/api/search-image?query=profile%2520picture%2520of%2520a%2520vietnamese%2520man%2C%2520glasses%2C%2520professional%2520look%2C%2520indoor%2520setting%2C%2520high%2520quality%2C%2520photorealistic&width=100&height=100&seq=12360&orientation=squarish"
+                      alt="User"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <p class="text-sm font-medium">Trần Minh Đức</p>
+                    <p class="text-xs text-gray-500">12/05/2025</p>
+                  </div>
+                </div>
+                <div class="flex items-center space-x-3">
+                  <div class="flex items-center text-gray-500">
+                    <i class="ri-heart-line mr-1"></i>
+                    <span class="text-sm">189</span>
+                  </div>
+                  <div class="flex items-center text-gray-500">
+                    <i class="ri-chat-1-line mr-1"></i>
+                    <span class="text-sm">41</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Fish Species Knowledge Section -->
+    <section class="py-12 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center mb-8">
+          <h2 class="text-2xl font-bold text-gray-800">Kiến thức loài cá</h2>
+          <a href="#" class="text-primary hover:underline flex items-center">
+            Xem tất cả
+            <i class="ri-arrow-right-line ml-1"></i>
+          </a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Fish Card 1 -->
+          <div
+            class="bg-white rounded-lg shadow-sm overflow-hidden transition duration-300 hover:shadow-md"
+          >
+            <div class="h-40 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=carp%2520fish%2C%2520detailed%2520view%2C%2520in%2520water%2C%2520natural%2520habitat%2C%2520clear%2520view%2520of%2520features%2C%2520high%2520quality%2C%2520photorealistic&width=500&height=300&seq=12361&orientation=landscape"
+                alt="Cá chép"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-bold mb-2">Cá chép</h3>
+              <p class="text-gray-600 text-sm mb-3">
+                Loài cá phổ biến tại các hồ nước ngọt Việt Nam, có tập tính ăn
+                mồi đa dạng.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span
+                  class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded"
+                  >Nước ngọt</span
+                >
+                <span
+                  class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded"
+                  >Dễ câu</span
+                >
+                <span
+                  class="bg-yellow-100 text-yellow-700 text-xs px-2 py-1 rounded"
+                  >Phổ biến</span
+                >
+              </div>
+              <a
+                href="#"
+                class="text-primary hover:underline text-sm flex items-center"
+              >
+                Xem chi tiết
+                <i class="ri-arrow-right-s-line ml-1"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Fish Card 2 -->
+          <div
+            class="bg-white rounded-lg shadow-sm overflow-hidden transition duration-300 hover:shadow-md"
+          >
+            <div class="h-40 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=snakehead%2520fish%2C%2520detailed%2520view%2C%2520in%2520water%2C%2520natural%2520habitat%2C%2520clear%2520view%2520of%2520features%2C%2520high%2520quality%2C%2520photorealistic&width=500&height=300&seq=12362&orientation=landscape"
+                alt="Cá lóc"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-bold mb-2">Cá lóc</h3>
+              <p class="text-gray-600 text-sm mb-3">
+                Loài cá hung dữ, thường sống ở vùng nước đồng bằng, đầm lầy miền
+                Nam.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span
+                  class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded"
+                  >Nước ngọt</span
+                >
+                <span class="bg-red-100 text-red-700 text-xs px-2 py-1 rounded"
+                  >Khó câu</span
+                >
+                <span
+                  class="bg-purple-100 text-purple-700 text-xs px-2 py-1 rounded"
+                  >Săn mồi</span
+                >
+              </div>
+              <a
+                href="#"
+                class="text-primary hover:underline text-sm flex items-center"
+              >
+                Xem chi tiết
+                <i class="ri-arrow-right-s-line ml-1"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Fish Card 3 -->
+          <div
+            class="bg-white rounded-lg shadow-sm overflow-hidden transition duration-300 hover:shadow-md"
+          >
+            <div class="h-40 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=tilapia%2520fish%2C%2520detailed%2520view%2C%2520in%2520water%2C%2520natural%2520habitat%2C%2520clear%2520view%2520of%2520features%2C%2520high%2520quality%2C%2520photorealistic&width=500&height=300&seq=12363&orientation=landscape"
+                alt="Cá rô phi"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-bold mb-2">Cá rô phi</h3>
+              <p class="text-gray-600 text-sm mb-3">
+                Loài cá dễ nuôi, sinh sản nhanh, thích hợp cho người mới tập
+                câu.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span
+                  class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded"
+                  >Nước ngọt</span
+                >
+                <span
+                  class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded"
+                  >Dễ câu</span
+                >
+                <span
+                  class="bg-yellow-100 text-yellow-700 text-xs px-2 py-1 rounded"
+                  >Phổ biến</span
+                >
+              </div>
+              <a
+                href="#"
+                class="text-primary hover:underline text-sm flex items-center"
+              >
+                Xem chi tiết
+                <i class="ri-arrow-right-s-line ml-1"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Fish Card 4 -->
+          <div
+            class="bg-white rounded-lg shadow-sm overflow-hidden transition duration-300 hover:shadow-md"
+          >
+            <div class="h-40 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=giant%2520mekong%2520catfish%2C%2520detailed%2520view%2C%2520in%2520water%2C%2520natural%2520habitat%2C%2520clear%2520view%2520of%2520features%2C%2520high%2520quality%2C%2520photorealistic&width=500&height=300&seq=12364&orientation=landscape"
+                alt="Cá tra"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-bold mb-2">Cá tra</h3>
+              <p class="text-gray-600 text-sm mb-3">
+                Loài cá đặc trưng vùng sông Mekong, có thể đạt kích thước lớn.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span
+                  class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded"
+                  >Nước ngọt</span
+                >
+                <span
+                  class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded"
+                  >Trung bình</span
+                >
+                <span
+                  class="bg-indigo-100 text-indigo-700 text-xs px-2 py-1 rounded"
+                  >Đặc trưng</span
+                >
+              </div>
+              <a
+                href="#"
+                class="text-primary hover:underline text-sm flex items-center"
+              >
+                Xem chi tiết
+                <i class="ri-arrow-right-s-line ml-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Achievement Ranking Section -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center mb-8">
+          <h2 class="text-2xl font-bold text-gray-800">
+            Bảng xếp hạng thành tựu
+          </h2>
+          <a href="#" class="text-primary hover:underline flex items-center">
+            Xem tất cả
+            <i class="ri-arrow-right-line ml-1"></i>
+          </a>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <!-- Ranking Table -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div
+              class="p-4 bg-primary bg-opacity-10 border-b border-primary border-opacity-20"
+            >
+              <h3 class="text-lg font-bold text-gray-800">
+                Top câu thủ tháng 5/2025
+              </h3>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="min-w-full">
+                <thead>
+                  <tr class="bg-gray-50">
+                    <th
+                      class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    >
+                      Hạng
+                    </th>
+                    <th
+                      class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    >
+                      Người câu
+                    </th>
+                    <th
+                      class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    >
+                      Thành tựu
+                    </th>
+                    <th
+                      class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    >
+                      Điểm
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                  <tr class="hover:bg-gray-50">
+                    <td class="px-6 py-4 whitespace-nowrap">
+                      <div
+                        class="flex items-center justify-center w-8 h-8 bg-yellow-100 text-yellow-800 rounded-full font-bold"
+                      >
+                        1
+                      </div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                      <div class="flex items-center">
+                        <div
+                          class="w-10 h-10 rounded-full overflow-hidden mr-3"
+                        >
+                          <img
+                            src="https://readdy.ai/api/search-image?query=profile%2520picture%2520of%2520a%2520vietnamese%2520man%2C%2520outdoor%2520setting%2C%2520fishing%2520hat%2C%2520casual%2520look%2C%2520high%2520quality%2C%2520photorealistic&width=100&height=100&seq=12365&orientation=squarish"
+                            alt="User"
+                            class="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div>
+                          <p class="font-medium">Nguyễn Văn Tuấn</p>
+                          <p class="text-xs text-gray-500">Hà Nội</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-6 py-4">
+                      <span>Cá chép 8.5kg tại Hồ Trị An</span>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                      <span class="font-bold text-primary">950</span>
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-gray-50">
+                    <td class="px-6 py-4 whitespace-nowrap">
+                      <div
+                        class="flex items-center justify-center w-8 h-8 bg-gray-100 text-gray-800 rounded-full font-bold"
+                      >
+                        2
+                      </div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                      <div class="flex items-center">
+                        <div
+                          class="w-10 h-10 rounded-full overflow-hidden mr-3"
+                        >
+                          <img
+                            src="https://readdy.ai/api/search-image?query=profile%2520picture%2520of%2520a%2520vietnamese%2520woman%2C%2520outdoor%2520setting%2C%2520casual%2520look%2C%2520high%2520quality%2C%2520photorealistic&width=100&height=100&seq=12366&orientation=squarish"
+                            alt="User"
+                            class="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div>
+                          <p class="font-medium">Trần Thị Mai</p>
+                          <p class="text-xs text-gray-500">TP.HCM</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-6 py-4">
+                      <span>Cá lóc 5.2kg tại Đồng Tháp</span>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                      <span class="font-bold text-primary">820</span>
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-gray-50">
+                    <td class="px-6 py-4 whitespace-nowrap">
+                      <div
+                        class="flex items-center justify-center w-8 h-8 bg-orange-100 text-orange-800 rounded-full font-bold"
+                      >
+                        3
+                      </div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                      <div class="flex items-center">
+                        <div
+                          class="w-10 h-10 rounded-full overflow-hidden mr-3"
+                        >
+                          <img
+                            src="https://readdy.ai/api/search-image?query=profile%2520picture%2520of%2520a%2520vietnamese%2520man%2C%2520middle%2520aged%2C%2520outdoor%2520setting%2C%2520casual%2520look%2C%2520high%2520quality%2C%2520photorealistic&width=100&height=100&seq=12367&orientation=squarish"
+                            alt="User"
+                            class="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div>
+                          <p class="font-medium">Phạm Minh Hoàng</p>
+                          <p class="text-xs text-gray-500">Cần Thơ</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-6 py-4">
+                      <span>Cá trê 3.8kg tại An Giang</span>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                      <span class="font-bold text-primary">780</span>
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-gray-50">
+                    <td class="px-6 py-4 whitespace-nowrap">
+                      <div
+                        class="flex items-center justify-center w-8 h-8 bg-gray-100 text-gray-800 rounded-full font-bold"
+                      >
+                        4
+                      </div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                      <div class="flex items-center">
+                        <div
+                          class="w-10 h-10 rounded-full overflow-hidden mr-3"
+                        >
+                          <img
+                            src="https://readdy.ai/api/search-image?query=profile%2520picture%2520of%2520a%2520vietnamese%2520man%2C%2520young%2C%2520outdoor%2520setting%2C%2520casual%2520look%2C%2520high%2520quality%2C%2520photorealistic&width=100&height=100&seq=12368&orientation=squarish"
+                            alt="User"
+                            class="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div>
+                          <p class="font-medium">Lê Văn Dũng</p>
+                          <p class="text-xs text-gray-500">Đà Nẵng</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-6 py-4">
+                      <span>Cá rô đồng 1.2kg tại Quảng Nam</span>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                      <span class="font-bold text-primary">650</span>
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-gray-50">
+                    <td class="px-6 py-4 whitespace-nowrap">
+                      <div
+                        class="flex items-center justify-center w-8 h-8 bg-gray-100 text-gray-800 rounded-full font-bold"
+                      >
+                        5
+                      </div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                      <div class="flex items-center">
+                        <div
+                          class="w-10 h-10 rounded-full overflow-hidden mr-3"
+                        >
+                          <img
+                            src="https://readdy.ai/api/search-image?query=profile%2520picture%2520of%2520a%2520vietnamese%2520woman%2C%2520young%2C%2520outdoor%2520setting%2C%2520casual%2520look%2C%2520high%2520quality%2C%2520photorealistic&width=100&height=100&seq=12369&orientation=squarish"
+                            alt="User"
+                            class="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div>
+                          <p class="font-medium">Nguyễn Thị Lan</p>
+                          <p class="text-xs text-gray-500">Huế</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-6 py-4">
+                      <span>Cá mè 2.5kg tại Thừa Thiên Huế</span>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                      <span class="font-bold text-primary">620</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- Recent Achievements -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div
+              class="p-4 bg-primary bg-opacity-10 border-b border-primary border-opacity-20"
+            >
+              <h3 class="text-lg font-bold text-gray-800">
+                Thành tựu mới nhất
+              </h3>
+            </div>
+            <div class="p-4 space-y-4">
+              <!-- Achievement Item 1 -->
+              <div
+                class="flex items-start p-3 rounded-lg hover:bg-gray-50 transition duration-300"
+              >
+                <div
+                  class="w-16 h-16 rounded-lg overflow-hidden mr-4 flex-shrink-0"
+                >
+                  <img
+                    src="https://readdy.ai/api/search-image?query=close%2520up%2520of%2520a%2520large%2520carp%2520fish%2C%2520detailed%2520scales%2C%2520being%2520held%2C%2520fishing%2520achievement%2C%2520high%2520quality%2C%2520photorealistic&width=200&height=200&seq=12370&orientation=squarish"
+                    alt="Cá"
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <div class="flex-grow">
+                  <div class="flex items-center justify-between mb-1">
+                    <h4 class="font-bold">Cá chép 8.5kg</h4>
+                    <span class="text-xs text-gray-500">2 giờ trước</span>
+                  </div>
+                  <p class="text-sm text-gray-600 mb-2">
+                    Câu được tại Hồ Trị An sau 3 giờ kiên trì.
+                  </p>
+                  <div class="flex items-center">
+                    <div class="w-6 h-6 rounded-full overflow-hidden mr-2">
+                      <img
+                        src="https://readdy.ai/api/search-image?query=profile%2520picture%2520of%2520a%2520vietnamese%2520man%2C%2520outdoor%2520setting%2C%2520fishing%2520hat%2C%2520casual%2520look%2C%2520high%2520quality%2C%2520photorealistic&width=100&height=100&seq=12371&orientation=squarish"
+                        alt="User"
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    <span class="text-xs font-medium">Nguyễn Văn Tuấn</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Achievement Item 2 -->
+              <div
+                class="flex items-start p-3 rounded-lg hover:bg-gray-50 transition duration-300"
+              >
+                <div
+                  class="w-16 h-16 rounded-lg overflow-hidden mr-4 flex-shrink-0"
+                >
+                  <img
+                    src="https://readdy.ai/api/search-image?query=close%2520up%2520of%2520a%2520snakehead%2520fish%2C%2520detailed%2520features%2C%2520being%2520held%2C%2520fishing%2520achievement%2C%2520high%2520quality%2C%2520photorealistic&width=200&height=200&seq=12372&orientation=squarish"
+                    alt="Cá"
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <div class="flex-grow">
+                  <div class="flex items-center justify-between mb-1">
+                    <h4 class="font-bold">Cá lóc 5.2kg</h4>
+                    <span class="text-xs text-gray-500">5 giờ trước</span>
+                  </div>
+                  <p class="text-sm text-gray-600 mb-2">
+                    Câu được tại đầm lầy Đồng Tháp bằng mồi giả.
+                  </p>
+                  <div class="flex items-center">
+                    <div class="w-6 h-6 rounded-full overflow-hidden mr-2">
+                      <img
+                        src="https://readdy.ai/api/search-image?query=profile%2520picture%2520of%2520a%2520vietnamese%2520woman%2C%2520outdoor%2520setting%2C%2520casual%2520look%2C%2520high%2520quality%2C%2520photorealistic&width=100&height=100&seq=12373&orientation=squarish"
+                        alt="User"
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    <span class="text-xs font-medium">Trần Thị Mai</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Achievement Item 3 -->
+              <div
+                class="flex items-start p-3 rounded-lg hover:bg-gray-50 transition duration-300"
+              >
+                <div
+                  class="w-16 h-16 rounded-lg overflow-hidden mr-4 flex-shrink-0"
+                >
+                  <img
+                    src="https://readdy.ai/api/search-image?query=close%2520up%2520of%2520a%2520catfish%2C%2520detailed%2520features%2C%2520being%2520held%2C%2520fishing%2520achievement%2C%2520high%2520quality%2C%2520photorealistic&width=200&height=200&seq=12374&orientation=squarish"
+                    alt="Cá"
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <div class="flex-grow">
+                  <div class="flex items-center justify-between mb-1">
+                    <h4 class="font-bold">Cá trê 3.8kg</h4>
+                    <span class="text-xs text-gray-500">8 giờ trước</span>
+                  </div>
+                  <p class="text-sm text-gray-600 mb-2">
+                    Câu được tại kênh rạch An Giang bằng mồi tự nhiên.
+                  </p>
+                  <div class="flex items-center">
+                    <div class="w-6 h-6 rounded-full overflow-hidden mr-2">
+                      <img
+                        src="https://readdy.ai/api/search-image?query=profile%2520picture%2520of%2520a%2520vietnamese%2520man%2C%2520middle%2520aged%2C%2520outdoor%2520setting%2C%2520casual%2520look%2C%2520high%2520quality%2C%2520photorealistic&width=100&height=100&seq=12375&orientation=squarish"
+                        alt="User"
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    <span class="text-xs font-medium">Phạm Minh Hoàng</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Achievement Item 4 -->
+              <div
+                class="flex items-start p-3 rounded-lg hover:bg-gray-50 transition duration-300"
+              >
+                <div
+                  class="w-16 h-16 rounded-lg overflow-hidden mr-4 flex-shrink-0"
+                >
+                  <img
+                    src="https://readdy.ai/api/search-image?query=close%2520up%2520of%2520a%2520small%2520perch%2520fish%2C%2520detailed%2520features%2C%2520being%2520held%2C%2520fishing%2520achievement%2C%2520high%2520quality%2C%2520photorealistic&width=200&height=200&seq=12376&orientation=squarish"
+                    alt="Cá"
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <div class="flex-grow">
+                  <div class="flex items-center justify-between mb-1">
+                    <h4 class="font-bold">Cá rô đồng 1.2kg</h4>
+                    <span class="text-xs text-gray-500">12 giờ trước</span>
+                  </div>
+                  <p class="text-sm text-gray-600 mb-2">
+                    Câu được tại ruộng lúa Quảng Nam sau cơn mưa.
+                  </p>
+                  <div class="flex items-center">
+                    <div class="w-6 h-6 rounded-full overflow-hidden mr-2">
+                      <img
+                        src="https://readdy.ai/api/search-image?query=profile%2520picture%2520of%2520a%2520vietnamese%2520man%2C%2520young%2C%2520outdoor%2520setting%2C%2520casual%2520look%2C%2520high%2520quality%2C%2520photorealistic&width=100&height=100&seq=12377&orientation=squarish"
+                        alt="User"
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    <span class="text-xs font-medium">Lê Văn Dũng</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Newsletter Section -->
+    <section class="py-12 bg-primary bg-opacity-10">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-2xl font-bold text-gray-800 mb-3">
+            Đăng ký nhận thông tin
+          </h2>
+          <p class="text-gray-600 mb-6">
+            Nhận thông báo về sự kiện mới, sản phẩm mới và chia sẻ kinh nghiệm
+            câu cá.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
+            <input
+              type="email"
+              placeholder="Email của bạn"
+              class="flex-grow px-4 py-3 rounded-button border-none focus:outline-none focus:ring-2 focus:ring-primary"
+            />
+            <button
+              class="bg-primary hover:bg-blue-600 text-white px-6 py-3 rounded-button font-medium transition duration-300 whitespace-nowrap"
+            >
+              Đăng ký
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white pt-12 pb-6">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          <!-- About -->
+          <div>
+            <h3 class="text-xl font-bold mb-4">Về chúng tôi</h3>
+            <p class="text-gray-400 mb-4">
+              Cộng đồng câu cá lớn nhất Việt Nam, kết nối những người đam mê câu
+              cá trên khắp cả nước.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition duration-300"
+              >
+                <i class="ri-facebook-fill text-xl"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition duration-300"
+              >
+                <i class="ri-youtube-fill text-xl"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition duration-300"
+              >
+                <i class="ri-instagram-fill text-xl"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition duration-300"
+              >
+                <i class="ri-tiktok-fill text-xl"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Quick Links -->
+          <div>
+            <h3 class="text-xl font-bold mb-4">Liên kết nhanh</h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >Trang chủ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >Sản phẩm</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >Sự kiện</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >Cộng đồng</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >Kiến thức</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Contact -->
+          <div>
+            <h3 class="text-xl font-bold mb-4">Liên hệ</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <i class="ri-map-pin-line mt-1 mr-3 text-gray-400"></i>
+                <span class="text-gray-400"
+                  >123 Nguyễn Huệ, Quận 1, TP.HCM</span
+                >
+              </li>
+              <li class="flex items-center">
+                <i class="ri-phone-line mr-3 text-gray-400"></i>
+                <span class="text-gray-400">+84 123 456 789</span>
+              </li>
+              <li class="flex items-center">
+                <i class="ri-mail-line mr-3 text-gray-400"></i>
+                <span class="text-gray-400">info@caucongdong.vn</span>
+              </li>
+            </ul>
+          </div>
+          <!-- App Download -->
+          <div>
+            <h3 class="text-xl font-bold mb-4">Tải ứng dụng</h3>
+            <p class="text-gray-400 mb-4">
+              Tải ứng dụng để có trải nghiệm tốt nhất.
+            </p>
+            <div class="space-y-2">
+              <a
+                href="#"
+                class="flex items-center bg-black rounded px-3 py-2 hover:bg-gray-900 transition duration-300"
+              >
+                <i class="ri-apple-fill text-2xl mr-2"></i>
+                <div>
+                  <div class="text-xs">Tải về trên</div>
+                  <div class="text-sm font-bold">App Store</div>
+                </div>
+              </a>
+              <a
+                href="#"
+                class="flex items-center bg-black rounded px-3 py-2 hover:bg-gray-900 transition duration-300"
+              >
+                <i class="ri-google-play-fill text-2xl mr-2"></i>
+                <div>
+                  <div class="text-xs">Tải về trên</div>
+                  <div class="text-sm font-bold">Google Play</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-gray-700 pt-6">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400 text-sm mb-4 md:mb-0">
+              © 2025 Cộng Đồng Câu Cá. Tất cả quyền được bảo lưu.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white text-sm transition duration-300"
+                >Điều khoản sử dụng</a
+              >
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white text-sm transition duration-300"
+                >Chính sách bảo mật</a
+              >
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white text-sm transition duration-300"
+                >Trợ giúp</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Chat Box -->
+    <div class="fixed bottom-6 right-6 z-50">
+      <button
+        id="chatToggle"
+        class="w-14 h-14 bg-primary hover:bg-blue-600 rounded-full shadow-lg flex items-center justify-center text-white transition duration-300"
+      >
+        <i class="ri-message-3-line text-2xl"></i>
+      </button>
+      <div
+        id="chatBox"
+        class="hidden absolute bottom-16 right-0 w-80 bg-white rounded-lg shadow-xl overflow-hidden"
+      >
+        <div class="bg-primary text-white p-4">
+          <div class="flex items-center justify-between">
+            <h3 class="font-bold">Hỗ trợ trực tuyến</h3>
+            <button id="chatClose" class="text-white hover:text-gray-200">
+              <i class="ri-close-line"></i>
+            </button>
+          </div>
+        </div>
+        <div class="h-80 overflow-y-auto p-4 bg-gray-50" id="chatMessages">
+          <div class="flex mb-4">
+            <div
+              class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white mr-2 flex-shrink-0"
+            >
+              <i class="ri-customer-service-2-line"></i>
+            </div>
+            <div class="bg-gray-200 rounded-lg rounded-tl-none p-3 max-w-[80%]">
+              <p class="text-sm">Xin chào! Tôi có thể giúp gì cho bạn?</p>
+              <span class="text-xs text-gray-500 mt-1 block">10:30</span>
+            </div>
+          </div>
+        </div>
+        <div class="p-3 border-t">
+          <div class="flex">
+            <input
+              type="text"
+              id="chatInput"
+              placeholder="Nhập tin nhắn..."
+              class="flex-grow px-3 py-2 border border-gray-300 rounded-l focus:outline-none focus:ring-1 focus:ring-primary text-sm"
+            />
+            <button
+              id="sendMessage"
+              class="bg-primary hover:bg-blue-600 text-white px-4 py-2 rounded-r transition duration-300"
+            >
+              <i class="ri-send-plane-fill"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Set active state for home link
+        const homeLink = document.getElementById("homeLink");
+        if (
+          homeLink &&
+          (window.location.pathname === "/" ||
+            window.location.pathname === "/index.html")
+        ) {
+          homeLink.classList.add("text-primary");
+        }
+        // User Menu Toggle
+        const userMenuButton = document.getElementById("userMenuButton");
+        const userMenu = document.getElementById("userMenu");
+        if (userMenuButton && userMenu) {
+          userMenuButton.addEventListener("click", function () {
+            userMenu.classList.toggle("hidden");
+          });
+          document.addEventListener("click", function (event) {
+            if (
+              !userMenuButton.contains(event.target) &&
+              !userMenu.contains(event.target)
+            ) {
+              userMenu.classList.add("hidden");
+            }
+          });
+        }
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+        // Chat Box Toggle
+        const chatToggle = document.getElementById("chatToggle");
+        const chatBox = document.getElementById("chatBox");
+        const chatClose = document.getElementById("chatClose");
+        const chatInput = document.getElementById("chatInput");
+        const sendMessage = document.getElementById("sendMessage");
+        const chatMessages = document.getElementById("chatMessages");
+        if (chatToggle && chatBox && chatClose) {
+          chatToggle.addEventListener("click", function () {
+            chatBox.classList.toggle("hidden");
+          });
+          chatClose.addEventListener("click", function () {
+            chatBox.classList.add("hidden");
+          });
+          function sendChatMessage() {
+            const message = chatInput.value.trim();
+            if (message) {
+              const time = new Date().toLocaleTimeString([], {
+                hour: "2-digit",
+                minute: "2-digit",
+              });
+              // User message
+              const userMessageHTML = `
+      <div class="flex mb-4 justify-end">
+      <div class="bg-primary text-white rounded-lg rounded-tr-none p-3 max-w-[80%]">
+      <p class="text-sm">${message}</p>
+      <span class="text-xs text-white text-opacity-70 mt-1 block">${time}</span>
+      </div>
+      </div>
+      `;
+              chatMessages.insertAdjacentHTML("beforeend", userMessageHTML);
+              chatInput.value = "";
+              // Auto reply after 1 second
+              setTimeout(() => {
+                const botMessageHTML = `
+      <div class="flex mb-4">
+      <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white mr-2 flex-shrink-0">
+      <i class="ri-customer-service-2-line"></i>
+      </div>
+      <div class="bg-gray-200 rounded-lg rounded-tl-none p-3 max-w-[80%]">
+      <p class="text-sm">Cảm ơn bạn đã liên hệ. Nhân viên của chúng tôi sẽ phản hồi sớm nhất có thể!</p>
+      <span class="text-xs text-gray-500 mt-1 block">${new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}</span>
+      </div>
+      </div>
+      `;
+                chatMessages.insertAdjacentHTML("beforeend", botMessageHTML);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+              }, 1000);
+              chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+          }
+          sendMessage.addEventListener("click", sendChatMessage);
+          chatInput.addEventListener("keypress", function (e) {
+            if (e.key === "Enter") {
+              sendChatMessage();
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

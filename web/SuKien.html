@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sự kiện | FishingHub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #f9fafb; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-3">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center">
+          <a href="Home.html" class="font-['Pacifico'] text-primary text-2xl">logo</a>
+        </div>
+        <nav class="hidden md:flex space-x-6">
+          <a href="Home.html" class="text-gray-800 hover:text-primary font-medium">Trang chủ</a>
+          <a href="Product.html" class="text-gray-800 hover:text-primary font-medium">Sản phẩm</a>
+          <a href="SuKien.html" class="text-primary font-medium">Sự kiện</a>
+          <a href="CongDong.html" class="text-gray-800 hover:text-primary font-medium">Cộng đồng</a>
+          <a href="KienThuc.html" class="text-gray-800 hover:text-primary font-medium">Kiến thức</a>
+        </nav>
+        <!-- Search and User Actions -->
+        <div class="flex items-center space-x-4">
+          <!-- Search -->
+          <div class="relative">
+            <input
+              type="text"
+              placeholder="Tìm kiếm..."
+              class="pl-10 pr-4 py-2 w-64 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+            />
+            <div
+              class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none w-6 h-full"
+            >
+              <i class="ri-search-line text-gray-400"></i>
+            </div>
+          </div>
+          <!-- Cart -->
+          <div class="relative w-10 h-10 flex items-center justify-center">
+            <button class="text-gray-700 hover:text-primary">
+              <i class="ri-shopping-cart-2-line text-xl"></i>
+            </button>
+            <span
+              class="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full"
+              >3</span
+            >
+          </div>
+          <!-- Notifications -->
+          <div class="relative w-10 h-10 flex items-center justify-center">
+            <button class="text-gray-700 hover:text-primary">
+              <i class="ri-notification-3-line text-xl"></i>
+            </button>
+            <span
+              class="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full"
+              >5</span
+            >
+          </div>
+          <!-- User Profile -->
+          <div class="relative">
+            <button
+              class="flex items-center space-x-2 focus:outline-none"
+              id="userMenuButton"
+            >
+              <div class="w-10 h-10 rounded-full bg-gray-200 overflow-hidden">
+                <img
+                  src="https://readdy.ai/api/search-image?query=profile%2520picture%2520of%2520a%2520vietnamese%2520man%2C%2520friendly%2520face%2C%2520natural%2520lighting%2C%2520professional%2520look%2C%2520high%2520quality%2C%2520photorealistic&width=100&height=100&seq=12346&orientation=squarish"
+                  alt="User"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <span class="hidden md:block text-gray-700"
+                >Nguyễn Văn Hải</span
+              >
+              <i class="ri-arrow-down-s-line text-gray-700"></i>
+            </button>
+            <!-- User Dropdown Menu -->
+            <div
+              class="absolute right-0 mt-2 w-48 bg-white rounded shadow-lg py-2 hidden"
+              id="userMenu"
+            >
+              <a
+                href="#"
+                class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+              >
+                <i class="ri-user-line mr-2"></i>Hồ sơ cá nhân
+              </a>
+              <a
+                href="#"
+                class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+              >
+                <i class="ri-settings-3-line mr-2"></i>Cài đặt
+              </a>
+              <a
+                href="#"
+                class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+              >
+                <i class="ri-trophy-line mr-2"></i>Thành tựu
+              </a>
+              <div class="border-t border-gray-100 my-1"></div>
+              <a
+                href="#"
+                class="block px-4 py-2 text-red-600 hover:bg-gray-100"
+              >
+                <i class="ri-logout-box-line mr-2"></i>Đăng xuất
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-12">
+    <h1 class="text-3xl font-bold mb-8 text-primary">Sự kiện sắp diễn ra</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Event Card 1 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden event-card transition duration-300">
+        <div class="h-48 overflow-hidden">
+          <img src="https://readdy.ai/api/search-image?query=fishing%2520competition%2520event%2C%2520people%2520gathered%2520at%2520lakeside%2C%2520fishing%2520rods%2C%2520competitive%2520atmosphere%2C%2520sunny%2520day%2C%2520natural%2520setting%2C%2520high%2520quality%2C%2520photorealistic&width=600&height=400&seq=12347&orientation=landscape" alt="Sự kiện câu cá" class="w-full h-full object-cover object-top" />
+        </div>
+        <div class="p-6">
+          <div class="flex items-center mb-4">
+            <span class="bg-blue-100 text-primary text-xs font-medium px-3 py-1 rounded-full">Đang mở đăng ký</span>
+            <span class="ml-auto text-sm text-gray-500">25/05/2025</span>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Giải đấu câu cá Hồ Tây 2025</h3>
+          <p class="text-gray-600 mb-4">Sự kiện câu cá thường niên lớn nhất miền Bắc với nhiều giải thưởng hấp dẫn.</p>
+          <div class="flex items-center text-sm text-gray-500 mb-4">
+            <div class="flex items-center mr-4">
+              <i class="ri-map-pin-line mr-1"></i>
+              <span>Hồ Tây, Hà Nội</span>
+            </div>
+            <div class="flex items-center">
+              <i class="ri-user-line mr-1"></i>
+              <span>142/200 người tham gia</span>
+            </div>
+          </div>
+          <button class="w-full bg-primary hover:bg-blue-600 text-white py-2 rounded-button font-medium transition duration-300 whitespace-nowrap">Đăng ký tham gia</button>
+        </div>
+      </div>
+      <!-- Event Card 2 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden event-card transition duration-300">
+        <div class="h-48 overflow-hidden">
+          <img src="https://readdy.ai/api/search-image?query=fishing%2520workshop%2C%2520instructor%2520teaching%2520fishing%2520techniques%2C%2520small%2520group%2520of%2520people%2C%2520learning%2520environment%2C%2520fishing%2520equipment%2520display%2C%2520high%2520quality%2C%2520photorealistic&width=600&height=400&seq=12348&orientation=landscape" alt="Workshop câu cá" class="w-full h-full object-cover object-top" />
+        </div>
+        <div class="p-6">
+          <div class="flex items-center mb-4">
+            <span class="bg-blue-100 text-primary text-xs font-medium px-3 py-1 rounded-full">Đang mở đăng ký</span>
+            <span class="ml-auto text-sm text-gray-500">02/06/2025</span>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Workshop kỹ thuật câu cá lure</h3>
+          <p class="text-gray-600 mb-4">Học hỏi kỹ thuật câu cá lure từ chuyên gia Trần Đình Phong với 15 năm kinh nghiệm.</p>
+          <div class="flex items-center text-sm text-gray-500 mb-4">
+            <div class="flex items-center mr-4">
+              <i class="ri-map-pin-line mr-1"></i>
+              <span>Hồ Trị An, Đồng Nai</span>
+            </div>
+            <div class="flex items-center">
+              <i class="ri-user-line mr-1"></i>
+              <span>28/50 người tham gia</span>
+            </div>
+          </div>
+          <button class="w-full bg-primary hover:bg-blue-600 text-white py-2 rounded-button font-medium transition duration-300 whitespace-nowrap">Đăng ký tham gia</button>
+        </div>
+      </div>
+      <!-- Event Card 3 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden event-card transition duration-300">
+        <div class="h-48 overflow-hidden">
+          <img src="https://readdy.ai/api/search-image?query=fishing%2520community%2520meetup%2C%2520people%2520socializing%2C%2520sharing%2520fishing%2520stories%2C%2520casual%2520atmosphere%2C%2520outdoor%2520setting%2C%2520fishing%2520gear%2520visible%2C%2520high%2520quality%2C%2520photorealistic&width=600&height=400&seq=12349&orientation=landscape" alt="Offline meetup" class="w-full h-full object-cover object-top" />
+        </div>
+        <div class="p-6">
+          <div class="flex items-center mb-4">
+            <span class="bg-blue-100 text-primary text-xs font-medium px-3 py-1 rounded-full">Đang mở đăng ký</span>
+            <span class="ml-auto text-sm text-gray-500">10/06/2025</span>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Offline meetup câu cá TP.HCM</h3>
+          <p class="text-gray-600 mb-4">Gặp gỡ, giao lưu và chia sẻ kinh nghiệm cùng cộng đồng câu cá tại TP.HCM.</p>
+          <div class="flex items-center text-sm text-gray-500 mb-4">
+            <div class="flex items-center mr-4">
+              <i class="ri-map-pin-line mr-1"></i>
+              <span>Hồ Bàu Cá, TP.HCM</span>
+            </div>
+            <div class="flex items-center">
+              <i class="ri-user-line mr-1"></i>
+              <span>56/100 người tham gia</span>
+            </div>
+          </div>
+          <button class="w-full bg-primary hover:bg-blue-600 text-white py-2 rounded-button font-medium transition duration-300 whitespace-nowrap">Đăng ký tham gia</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white pt-12 pb-6">
+    <!-- ... Copy phần footer và chat box từ Home.html ... -->
+  </footer>
+</body>
+</html> 
